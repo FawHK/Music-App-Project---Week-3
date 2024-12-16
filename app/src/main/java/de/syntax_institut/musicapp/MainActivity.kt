@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import de.syntax_institut.musicapp.components.SongGrid
 import de.syntax_institut.musicapp.components.SongList
 import de.syntax_institut.musicapp.data.songs
 import de.syntax_institut.musicapp.ui.theme.MusicAppTheme
@@ -14,7 +15,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MusicAppTheme {
-                SongList(songs = songs)
+//                SongList(songs = songs)
+                SongGrid(songs = songs)
             }
         }
     }

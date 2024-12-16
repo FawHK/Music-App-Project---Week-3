@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="com.obiscr.chatgpt.settings.EasyCodeState">
+    <option name="projectFiles" value="$PROJECT_DIR$/app/src/androidTest/java/de/syntax_institut/musicapp/ExampleInstrumentedTest.kt;/Users/fawwazhk/Developer/Android/Week 3/Musik App/app/src/main/java/de/syntax_institut/musicapp/Data/Song.kt;/Users/fawwazhk/Developer/Android/Week 3/Musik App/app/src/main/java/de/syntax_institut/musicapp/ui/theme/Color.kt;/Users/fawwazhk/Developer/Android/Week 3/Musik App/app/src/main/java/de/syntax_institut/musicapp/ui/theme/Theme.kt;/Users/fawwazhk/Developer/Android/Week 3/Musik App/app/src/main/java/de/syntax_institut/musicapp/ui/theme/Type.kt;/Users/fawwazhk/Developer/Android/Week 3/Musik App/app/src/main/java/de/syntax_institut/musicapp/MainActivity.kt;/Users/fawwazhk/Developer/Android/Week 3/Musik App/app/src/test/java/de/syntax_institut/musicapp/ExampleUnitTest.kt;/Users/fawwazhk/Developer/Android/Week 3/Musik App/app/build.gradle.kts;/Users/fawwazhk/Developer/Android/Week 3/Musik App/build.gradle.kts;/Users/fawwazhk/Developer/Android/Week 3/Musik App/settings.gradle.kts" />
+  </component>
+</project>

@@ -26,6 +26,9 @@ fun SongCard(song: Song, modifier: Modifier = Modifier) {
     Card(
         shape = RoundedCornerShape(8.dp),
         elevation = CardDefaults.cardElevation(4.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = androidx.compose.ui.graphics.Color.LightGray
+        ),
         modifier = modifier
             .padding(8.dp)
             .fillMaxWidth(),
@@ -36,7 +39,9 @@ fun SongCard(song: Song, modifier: Modifier = Modifier) {
                 .fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Column(modifier = modifier.weight(1f)) {
+            Column(
+                modifier = modifier
+                    .weight(1f)) {
                 Text(
                     text = song.title,
                     style = MaterialTheme.typography.titleMedium.copy(fontSize = 18.sp),
@@ -62,8 +67,10 @@ fun SongCard(song: Song, modifier: Modifier = Modifier) {
 
 
 @Composable
-fun SongList(songs: List<Song>) {
-    LazyColumn {
+fun SongList(songs: List<Song>, modifier: Modifier = Modifier) {
+    LazyColumn(
+        modifier = modifier.padding(top = 24.dp)
+    ) {
         items(songs) { song ->
             SongCard(song = song)
         }

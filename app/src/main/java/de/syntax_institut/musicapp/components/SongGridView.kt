@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import de.syntax_institut.musicapp.R
@@ -41,14 +42,14 @@ fun SongView(song: Song, modifier: Modifier = Modifier) {
                 .clip(MaterialTheme.shapes.medium)
         )
         Text(
-            text = "Artist: ${song.artist}",
+            text = stringResource(R.string.artist, song.artist),
             fontSize = 14.sp,
             fontWeight = MaterialTheme.typography.titleSmall.fontWeight,
             modifier = Modifier
             .padding(top = 8.dp))
 
         Text(
-            text = "Song: ${song.title}",
+            text = stringResource(R.string.song, song.title),
             fontWeight = MaterialTheme.typography.titleMedium.fontWeight,
             fontSize = 14.sp,
         )

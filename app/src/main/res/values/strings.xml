@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">MusicApp</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="playlists">Playlists</string>
+    <string name="unfollow">Unfollow</string>
+    <string name="follow">Follow</string>
+    <string name="heavy_metal">Heavy Metal</string>
+    <string name="pop">Pop</string>
+    <string name="rock">Rock</string>
+    <string name="genres">Genres</string>
+    <string name="song">Song: %1$s</string>
+    <string name="artist">Artist: %1$s</string>
 </resources>

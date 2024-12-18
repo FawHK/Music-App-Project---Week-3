@@ -3,9 +3,7 @@ package de.syntax_institut.musicapp.components
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.FormatLineSpacing
 import androidx.compose.material.icons.filled.GridView
@@ -22,10 +20,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import de.syntax_institut.musicapp.data.songs
 
 @Composable
-fun HomeView(navController: () -> Unit, modifier: Modifier = Modifier) {
+fun HomeView(navController: NavController, modifier: Modifier = Modifier) {
     var changeView by remember { mutableStateOf(false) }
 
     Column(
@@ -34,10 +33,13 @@ fun HomeView(navController: () -> Unit, modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Row {
+        Row(
+//            modifier = modifier.padding(horizontal = 16.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             FloatingActionButton(
                 onClick = { changeView = !changeView },
-                modifier = modifier.padding(start = 30.dp),
                 shape = MaterialTheme.shapes.medium,
                 containerColor = Color.Red,
                 contentColor = Color.White,
@@ -47,11 +49,8 @@ fun HomeView(navController: () -> Unit, modifier: Modifier = Modifier) {
                     contentDescription = "Change View"
                 )
             }
-            Spacer(modifier = modifier.width(250.dp))
-
             FloatingActionButton(
-                onClick = { navController() },
-                modifier = modifier.padding(end = 30.dp),
+                onClick = { navController.navigate(ProfileView) },
                 shape = MaterialTheme.shapes.medium,
                 containerColor = Color.DarkGray,
                 contentColor = Color.White,

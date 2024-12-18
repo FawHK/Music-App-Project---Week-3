@@ -11,4 +11,5 @@
     <string name="genres">Genres</string>
     <string name="song">Song: %1$s</string>
     <string name="artist">Artist: %1$s</string>
+    <string name="podcast">Podcast</string>
 </resources>

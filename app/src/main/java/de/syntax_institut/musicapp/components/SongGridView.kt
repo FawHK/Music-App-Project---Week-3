@@ -1,6 +1,7 @@
 package de.syntax_institut.musicapp.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -19,10 +20,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import de.syntax_institut.musicapp.R
-import de.syntax_institut.musicapp.data.songs
+
 
 
 @Composable
@@ -57,7 +57,7 @@ fun SongView(song: Song, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun SongGrid(songs: List<Song>, modifier: Modifier = Modifier) {
+fun SongGrid(songs: List<Song>, modifier: Modifier = Modifier, onClick: (Song) -> Unit) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
         modifier = modifier
@@ -65,13 +65,13 @@ fun SongGrid(songs: List<Song>, modifier: Modifier = Modifier) {
             .fillMaxWidth()
     ) {
         items(songs) { song ->
-            SongView(song = song)
+            SongView(song = song, modifier = modifier.clickable { onClick(song) })
         }
     }
 }
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun SongGridPreview() {
-    SongGrid(songs = songs)
-}
+//
+//@Preview(showBackground = true, showSystemUi = true)
+//@Composable
+//fun SongGridPreview() {
+//    SongGrid(songs = songs)
+//}

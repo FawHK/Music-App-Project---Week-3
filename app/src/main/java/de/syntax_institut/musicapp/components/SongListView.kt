@@ -1,5 +1,6 @@
 package de.syntax_institut.musicapp.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,11 +16,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import de.syntax_institut.musicapp.data.Song
-import de.syntax_institut.musicapp.data.songs
 
 @Composable
 fun SongCard(song: Song, modifier: Modifier = Modifier) {
@@ -31,7 +30,7 @@ fun SongCard(song: Song, modifier: Modifier = Modifier) {
         ),
         modifier = modifier
             .padding(8.dp)
-            .fillMaxWidth(),
+            .fillMaxWidth()
     ) {
         Row(
             modifier = modifier
@@ -67,19 +66,15 @@ fun SongCard(song: Song, modifier: Modifier = Modifier) {
 
 
 @Composable
-fun SongList(songs: List<Song>, modifier: Modifier = Modifier) {
+fun SongList(songs: List<Song>, modifier: Modifier = Modifier, onClick: (Song) -> Unit) {
     LazyColumn(
         modifier = modifier.padding(top = 24.dp)
     ) {
         items(songs) { song ->
-            SongCard(song = song)
+            SongCard(song = song, modifier = modifier.clickable { onClick(song) })
         }
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun SongListPreview() {
-    SongList(songs = songs)
-}
+
 

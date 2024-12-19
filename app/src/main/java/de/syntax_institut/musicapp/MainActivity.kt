@@ -4,10 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.navigation.compose.rememberNavController
 import de.syntax_institut.musicapp.components.NaviView
 import de.syntax_institut.musicapp.ui.theme.MusicAppTheme
-import de.syntax_institut.musicapp.components.SearchView
 
 
 class MainActivity : ComponentActivity() {
@@ -17,6 +15,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MusicAppTheme {
                 NaviView()
+//                PlayView(song = Song("Nevermore", "Lamb of God", 5.19f, "Omens"), navigateBack = {})
 //                ProfileView(navController = {})
 //                HomeView(songs = songs, navController = {})
 //                QueryGrid(queries = searchQueries)

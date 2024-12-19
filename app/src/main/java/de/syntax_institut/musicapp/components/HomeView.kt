@@ -1,5 +1,6 @@
 package de.syntax_institut.musicapp.components
 
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -21,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import de.syntax_institut.musicapp.data.Song
 import de.syntax_institut.musicapp.data.songs
 
 @Composable
@@ -62,9 +64,17 @@ fun HomeView(navController: NavController, modifier: Modifier = Modifier) {
             }
         }
         if (changeView) {
-            SongList(songs = songs)
+            SongList(songs = songs, onClick = { song: Song ->
+                navController.navigate(
+                    Song(song.title, song.artist, song.duration, song.album)
+                )
+            })
         } else {
-            SongGrid(songs = songs)
+            SongGrid(songs = songs, onClick = { song: Song ->
+                navController.navigate(
+                    Song(song.title, song.artist, song.duration, song.album)
+                )
+            })
         }
     }
 }

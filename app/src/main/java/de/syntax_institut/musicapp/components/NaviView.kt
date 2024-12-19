@@ -15,11 +15,12 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
+import de.syntax_institut.musicapp.data.Song
 import de.syntax_institut.musicapp.data.navItems
 import kotlinx.serialization.Serializable
 
@@ -31,6 +32,7 @@ object ProfileView
 
 @Serializable
 object SearchView
+
 
 
 @Composable
@@ -59,6 +61,13 @@ fun NaviView(modifier: Modifier = Modifier) {
 
             composable<SearchView> {
                 SearchView()
+            }
+
+            composable<Song> {
+                val song = it.toRoute<Song>()
+                PlayView(song) {
+                    navController.navigateUp()
+                }
             }
         }
     }

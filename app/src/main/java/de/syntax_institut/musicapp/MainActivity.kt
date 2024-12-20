@@ -20,6 +20,7 @@ class MainActivity : ComponentActivity() {
 //                HomeView(songs = songs, navController = {})
 //                QueryGrid(queries = searchQueries)
 //                SearchView()
+//                SongGridHorizental(songs = songs)
             }
         }
     }

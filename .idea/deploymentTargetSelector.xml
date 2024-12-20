@@ -11,16 +11,8 @@
                 <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\fawwa_k023dl6\.android\avd\Pixel_9_Pro_API_35.avd" />
               </handle>
             </Target>
-            <Target type="DEFAULT_BOOT">
-              <handle>
-                <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\fawwa_k023dl6\.android\avd\S23_Ultra_API_35.avd" />
-              </handle>
-            </Target>
           </targets>
         </DialogSelection>
-      </SelectionState>
-      <SelectionState runConfigName="SearchViewPreview">
-        <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
   </component>

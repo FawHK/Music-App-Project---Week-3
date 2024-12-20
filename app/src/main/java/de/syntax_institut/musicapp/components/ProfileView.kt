@@ -15,8 +15,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -51,15 +53,15 @@ fun ProfileView(navController: () -> Unit, modifier: Modifier = Modifier) {
             Image(
                 painter = painterResource(R.drawable.profile),
                 contentDescription = "",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
+                contentScale = ContentScale.FillBounds,
+                modifier = modifier
                     .fillMaxWidth()
-                    .size(250.dp)
+                    .size(200.dp)
             )
             FloatingActionButton(
                 onClick = { navController() },
                 modifier = modifier.padding(start = 16.dp, top = 16.dp),
-                containerColor = Color.DarkGray,
+                containerColor = MaterialTheme.colorScheme.primary,
                 contentColor = Color.White,
             ) {
                 Icon(
@@ -89,6 +91,10 @@ fun ProfileView(navController: () -> Unit, modifier: Modifier = Modifier) {
                 }
             },
             shape = RoundedCornerShape(16.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = MaterialTheme.colorScheme.primary,
+                contentColor = Color.White
+            ),
             modifier = modifier
                 .padding(top = 16.dp)
                 .align(Alignment.CenterHorizontally)
@@ -97,7 +103,6 @@ fun ProfileView(navController: () -> Unit, modifier: Modifier = Modifier) {
                 text = if (isFollowClicked) stringResource(R.string.unfollow) else stringResource(R.string.follow),
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color.White,
                 textAlign = TextAlign.Center,
                 modifier = modifier.width(100.dp)
             )
@@ -106,7 +111,6 @@ fun ProfileView(navController: () -> Unit, modifier: Modifier = Modifier) {
             text = stringResource(R.string.genres),
             fontSize = 28.sp,
             fontWeight = FontWeight.Bold,
-            color = Color.Black,
             modifier = modifier.padding(top = 50.dp, start = 16.dp)
         )
         Row(
@@ -127,12 +131,10 @@ fun ProfileStat(number: Int, label: String) {
             text = "$number",
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
-            color = Color.Black
         )
         Text(
             text = label,
             fontSize = 14.sp,
-            color = Color.Gray
         )
     }
 }
@@ -147,11 +149,10 @@ fun GenresView(label: String, modifier: Modifier = Modifier) {
             text = label,
             fontSize = 12.sp,
             fontWeight = FontWeight.Bold,
-            color = Color.Black,
             textAlign = TextAlign.Center,
             modifier = modifier
                 .clip(RoundedCornerShape(16.dp))
-                .background(Color.LightGray)
+                .background(MaterialTheme.colorScheme.primary)
                 .width(120.dp)
                 .padding(12.dp)
         )

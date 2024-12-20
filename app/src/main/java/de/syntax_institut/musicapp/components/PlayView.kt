@@ -34,23 +34,24 @@ import de.syntax_institut.musicapp.data.Song
 import androidx.compose.material3.*
 
 
+
 @Composable
 fun PlayView(song: Song, modifier: Modifier = Modifier, navigateBack: () -> Unit) {
     Column(
         modifier = modifier
             .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.SpaceAround
+//        verticalArrangement = Arrangement.SpaceBetween
     ) {
         Button(
             onClick = { navigateBack() },
             shape = RoundedCornerShape(16.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color.Gray,
+                containerColor = MaterialTheme.colorScheme.primary,
                 contentColor = Color.White
             ),
             modifier = modifier
-                .padding(start = 16.dp)
+                .padding(start = 16.dp, bottom = 16.dp)
                 .align(Alignment.Start)
         ) {
             Icon(
@@ -62,30 +63,30 @@ fun PlayView(song: Song, modifier: Modifier = Modifier, navigateBack: () -> Unit
         Image(
             painter = painterResource(R.drawable.omens),
             contentDescription = "",
-            contentScale = ContentScale.Crop,
+            contentScale = ContentScale.FillBounds,
             modifier = modifier
                 .fillMaxWidth()
-                .size(250.dp)
+                .size(200.dp)
         )
         Column(
+            modifier = modifier.padding(top = 30.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             Text(
                 text = song.artist + " - " + song.album,
-                color = Color.Black,
                 fontSize = 20.sp
             )
             Text(
                 text = song.title,
-                color = Color.Black,
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold
             )
         }
         Column(
             modifier = modifier.padding(horizontal = 16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.SpaceEvenly
         ) {
             Slider(
                 value = 0.76f,
@@ -103,25 +104,29 @@ fun PlayView(song: Song, modifier: Modifier = Modifier, navigateBack: () -> Unit
                 Text("0:00", fontSize = 12.sp)
                 Text(song.duration, fontSize = 12.sp)
             }
-        }
+            Row(
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                verticalAlignment = Alignment.Bottom,
+                modifier = modifier
+                    .fillMaxWidth()
+//                    .padding(top = 180.dp)
 
-        Row(
-            horizontalArrangement = Arrangement.SpaceEvenly,
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = modifier.fillMaxWidth()
-        ) {
-            IconButton(onClick = {}) {
-                Icon(Icons.Filled.SkipPrevious, contentDescription = "Previous")
-            }
-            IconButton(onClick = {}) {
-                Icon(Icons.Filled.PlayArrow, contentDescription = "Play")
-            }
-            IconButton(onClick = {}) {
-                Icon(Icons.Filled.SkipNext, contentDescription = "Next")
+            ) {
+                IconButton(onClick = {}) {
+                    Icon(Icons.Filled.SkipPrevious, contentDescription = "Previous")
+                }
+                IconButton(onClick = {}) {
+                    Icon(Icons.Filled.PlayArrow, contentDescription = "Play")
+                }
+                IconButton(onClick = {}) {
+                    Icon(Icons.Filled.SkipNext, contentDescription = "Next")
+                }
             }
         }
     }
 }
+
+
 
 //@Preview(showBackground = true, showSystemUi = true)
 //@Composable

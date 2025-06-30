@@ -24,6 +24,12 @@ Musik App is an Android application designed as a training project to demonstrat
 *   [Kotlin](https://kotlinlang.org/) - The programming language used.
 *   [Jetpack Compose](https://developer.android.com/jetpack/compose) - Android's modern toolkit for building native UI.
 
+## 👨‍💻 About Me
+
+This project was lovingly coded by **Fawwaz H.K.**
+
+Thanks for stopping by! 
+
 ---
 
 > **Note:**  

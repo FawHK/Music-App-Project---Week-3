@@ -8,9 +8,6 @@ import androidx.compose.ui.graphics.Color
 import de.syntax_institut.musicapp.components.HomeView
 import de.syntax_institut.musicapp.components.SearchView
 
-
-
-
 val songs = listOf(
     Song(title = "Nevermore", artist = "Lamb of God", duration = "5:19", album = "Omens"),
     Song(title = "Vanishing", artist = "Lamb of God", duration = "4:00", album = "Omens"),

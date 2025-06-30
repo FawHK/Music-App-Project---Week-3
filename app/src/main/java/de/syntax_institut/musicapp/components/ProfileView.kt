@@ -44,6 +44,7 @@ import de.syntax_institut.musicapp.R
 fun ProfileView(navController: () -> Unit, modifier: Modifier = Modifier) {
     var followersNum by rememberSaveable { mutableIntStateOf(25) }
     var isFollowClicked by rememberSaveable { mutableStateOf(false) }
+
     Column(modifier = modifier.fillMaxSize()) {
         Box(
             modifier = modifier

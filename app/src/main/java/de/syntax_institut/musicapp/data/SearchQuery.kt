@@ -4,5 +4,5 @@ import androidx.compose.ui.graphics.Color
 
 data class SearchQuery(
     var query: String,
-    var color: Color,
+    var color: Color
 )

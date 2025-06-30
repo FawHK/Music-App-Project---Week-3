@@ -37,7 +37,6 @@ object ProfileView
 @Serializable
 object SearchView
 
-
 @Composable
 fun NaviView(modifier: Modifier = Modifier) {
     val navController = rememberNavController()
@@ -45,8 +44,6 @@ fun NaviView(modifier: Modifier = Modifier) {
         modifier = modifier.fillMaxSize(),
         bottomBar = { BottomBar(navController = navController) }
     ) { innerPadding ->
-
-
         NavHost(
             navController = navController,
             startDestination = HomeView,

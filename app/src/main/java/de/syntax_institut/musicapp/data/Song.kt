@@ -7,5 +7,5 @@ data class Song(
     var title: String,
     var artist: String,
     var duration: String,
-    var album: String,
+    var album: String
 )

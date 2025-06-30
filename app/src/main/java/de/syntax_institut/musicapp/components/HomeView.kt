@@ -47,7 +47,6 @@ fun HomeView(navController: NavController, modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Row(
-//            modifier = modifier.padding(horizontal = 16.dp),
             horizontalArrangement = Arrangement.SpaceAround,
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -59,7 +58,7 @@ fun HomeView(navController: NavController, modifier: Modifier = Modifier) {
                 modifier = Modifier
                     .size(60.dp)
                     .clip(CircleShape)
-                    .border(2.dp, MaterialTheme.colorScheme.onPrimary , CircleShape)
+                    .border(2.dp, MaterialTheme.colorScheme.onPrimary, CircleShape)
                     .clickable { navController.navigate(ProfileView) },
                 contentScale = ContentScale.Crop
             )
@@ -89,7 +88,8 @@ fun HomeView(navController: NavController, modifier: Modifier = Modifier) {
                 navController.navigate(
                     Song(song.title, song.artist, song.duration, song.album)
                 )
-            })
+            }
+            )
         }
     }
 }

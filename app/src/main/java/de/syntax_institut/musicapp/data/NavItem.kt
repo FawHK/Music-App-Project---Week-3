@@ -6,5 +6,4 @@ data class NavItem<T: Any>(
     val title: String,
     val icon: ImageVector,
     val destination: T
-
 )

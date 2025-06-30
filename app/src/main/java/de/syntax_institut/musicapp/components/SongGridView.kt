@@ -20,9 +20,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import de.syntax_institut.musicapp.R
-
+import de.syntax_institut.musicapp.data.songs
 
 
 @Composable
@@ -69,9 +70,12 @@ fun SongGrid(songs: List<Song>, modifier: Modifier = Modifier, onClick: (Song) -
         }
     }
 }
-//
-//@Preview(showBackground = true, showSystemUi = true)
-//@Composable
-//fun SongGridPreview() {
-//    SongGrid(songs = songs)
-//}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun SongGridPreview() {
+    SongGrid(
+        songs = songs,
+        onClick = {  }
+    )
+}

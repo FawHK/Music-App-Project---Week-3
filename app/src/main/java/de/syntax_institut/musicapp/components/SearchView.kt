@@ -25,7 +25,6 @@ import de.syntax_institut.musicapp.data.SearchQuery
 import de.syntax_institut.musicapp.data.searchQueries
 
 
-
 @Composable
 fun SearchView(modifier: Modifier = Modifier) {
     Column(
@@ -88,10 +87,3 @@ fun QueryGrid(queries: List<SearchQuery>, modifier: Modifier = Modifier) {
         }
     }
 }
-
-
-//@Preview(showBackground = true, showSystemUi = true)
-//@Composable
-//fun SearchViewPreview() {
-//    SearchView()
-//}

@@ -41,7 +41,6 @@ fun PlayView(song: Song, modifier: Modifier = Modifier, navigateBack: () -> Unit
         modifier = modifier
             .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-//        verticalArrangement = Arrangement.SpaceBetween
     ) {
         Button(
             onClick = { navigateBack() },
@@ -109,8 +108,6 @@ fun PlayView(song: Song, modifier: Modifier = Modifier, navigateBack: () -> Unit
                 verticalAlignment = Alignment.Bottom,
                 modifier = modifier
                     .fillMaxWidth()
-//                    .padding(top = 180.dp)
-
             ) {
                 IconButton(onClick = {}) {
                     Icon(Icons.Filled.SkipPrevious, contentDescription = "Previous")
@@ -125,11 +122,3 @@ fun PlayView(song: Song, modifier: Modifier = Modifier, navigateBack: () -> Unit
         }
     }
 }
-
-
-
-//@Preview(showBackground = true, showSystemUi = true)
-//@Composable
-//fun PlayViewPreview() {
-//    PlayView()
-//}

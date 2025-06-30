@@ -25,9 +25,6 @@ fun SongCard(song: Song, modifier: Modifier = Modifier) {
     Card(
         shape = RoundedCornerShape(8.dp),
         elevation = CardDefaults.cardElevation(4.dp),
-//        colors = CardDefaults.cardColors(
-//            containerColor = MaterialTheme.colorScheme.secondary,
-//        ),
         modifier = modifier
             .padding(8.dp)
             .fillMaxWidth()

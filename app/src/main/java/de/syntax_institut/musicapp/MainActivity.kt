@@ -15,12 +15,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             MusicAppTheme {
                 NaviView()
-//                PlayView(song = Song("Nevermore", "Lamb of God", 5.19f, "Omens"), navigateBack = {})
-//                ProfileView(navController = {})
-//                HomeView(songs = songs, navController = {})
-//                QueryGrid(queries = searchQueries)
-//                SearchView()
-//                SongGridHorizental(songs = songs)
             }
         }
     }
